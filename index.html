@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Invitación</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial;
+    
+    /* FOTO DE FONDO */
+    background: url("fondo.jpg") no-repeat center center;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BOTÓN MEJORADO */
+button {
+    padding: 40px 90px;
+    font-size: 45px;
+    background: linear-gradient(45deg, gold, #ffd700);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+/* EFECTO HOVER */
+button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #ffd700, gold);
+}
+</style>
+</head>
+
+<body onclick="activarAudio()">
+
+<audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="entrar()">Entrar</button>
+
+<script>
+let audioActivado = false;
+
+function activarAudio() {
+    if (!audioActivado) {
+        const audio = document.getElementById("musica");
+        audio.play().catch(() => {});
+        audioActivado = true;
+    }
+}
+
+function entrar() {
+    const audio = document.getElementById("musica");
+    audio.play();
+
+    window.open("https://fainvitaciones.com/valeria-anahi", "_blank");
+}
+</script>
+
+</body>
+</html>
